@@ -2,8 +2,10 @@
     display: flex;
 }
 
+
+
 .square {
-    background-color: aqua;
+    background-color: seagreen;
     width: 40px;
     height: 40px;
     border: 1px solid black;

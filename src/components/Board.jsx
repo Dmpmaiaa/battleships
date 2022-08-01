@@ -13,7 +13,7 @@ const Board = (props) => {
        
     }
 
-    console.log(grid)
+
   
 
     return (

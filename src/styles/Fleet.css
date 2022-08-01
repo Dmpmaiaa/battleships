@@ -1,0 +1,35 @@
+.ship {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ship:last-of-type {
+    border-bottom-right-radius: 100%;
+    border-top-right-radius: 100%
+}
+
+.hole {
+    
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.active {
+    max-width: fit-content;
+    border-radius: 50%;
+    background-color: red;
+}
+.shipContainer {
+    display: flex;
+    margin: 1px;
+
+    
+}
