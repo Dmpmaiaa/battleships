@@ -1,33 +1,36 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { nanoid } from 'nanoid'
+import Board from './components/Board'
+import Fleet from './components/Fleet'
+import './styles/Board.css'
+import './styles/Fleet.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+const config = {
+    shipSizes: [2, 3, 3, 4, 5],
+    rows: 10,
+    columns: 10,
+}
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+const [gameState, setGameState] = useState('start')
+const [shipSelected, setShipSelected] = useState (0)
+
+return (
+    <main>
+      <Board 
+          gameState={gameState}
+          rows={config.rows} 
+          columns={config.columns}/>
+
+      <Fleet  
+          config={config}
+          gameState={gameState}
+          setGameState={setGameState}
+          setShipSelected={setShipSelected}
+          
+          />
+    </main>
   )
 }
 
