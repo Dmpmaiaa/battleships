@@ -1,35 +1,37 @@
-.ship {
-    width: 20px;
-    height: 20px;
+
+.shipBlock{
+    width: 40px;
+    height: 40px;
     background-color: black;
+    cursor:pointer;
+    margin-top: 2px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-
-
-.ship:last-of-type {
-    border-bottom-right-radius: 100%;
-    border-top-right-radius: 100%
+.fullShip{
+    display: flex;
 }
 
-.hole {
-    
-    width: 7px;
-    height: 7px;
+.hole{
+    width: 10px;
+    height:10px;
     border-radius: 50%;
     background-color: white;
 }
 
-.active {
-    max-width: fit-content;
-    border-radius: 50%;
+.shipBlock:first-child {
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+
+.shipBlock:last-child {
+    border-top-right-radius: 80%;
+    border-bottom-right-radius: 80%;
+}
+
+.fullShip.active .shipBlock {
     background-color: red;
 }
-.shipContainer {
-    display: flex;
-    margin: 1px;
 
-    
-}

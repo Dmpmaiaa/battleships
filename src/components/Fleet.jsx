@@ -11,7 +11,10 @@ const Fleet = ({
     
     function selectShip(e) {
         const ship = e.target.parentNode;
-        setShipSelected(prevID => ship.id)
+        setShipSelected(ship.id)
+        setGameState('shipChosen')
+        ship.classList.contains('active') ? ship.classList.remove('active') : ship.classList.add('active')
+
     }
     // DISPLAYS SHIPS UNDER THE BOARD 
     function displayFleet() {
@@ -25,8 +28,8 @@ const Fleet = ({
                     <div   
                                                                     // APPENDS THE SHIP ITSELF TO THE ARRAY
                         key={nanoid()} 
-                        className="ship">
-                            <div className='hole'></div>
+                        className="shipBlock">
+                           <div className="hole"></div>
                     </div>
                     
                 )
@@ -36,8 +39,8 @@ const Fleet = ({
                 <div 
                     key={nanoid()}  
                     id = {ship + 1}                                    // BY DOING THIS THE NUMBER OF TIMES OF THE SHIPSIZES ARRAY WE GET ALL THE BOATS IN THE FLEET
-                    className='shipContainer'
-                    onClick={selectShip}>                               
+                    className='fullShip'
+                    onClick={(e)=>selectShip(e)}>                               
                     {shipBlocks}
                 </div>
             )                               
@@ -50,5 +53,6 @@ const Fleet = ({
 
     return displayFleet()
 }
+
 
 export default Fleet
