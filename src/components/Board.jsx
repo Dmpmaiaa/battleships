@@ -3,6 +3,8 @@ import Square from "./Square";
 import { nanoid } from "nanoid";
 
 const Board = (props) => {
+    
+
 
     let grid = []
     for (let row = 0 ; row < props.rows; row++) {
