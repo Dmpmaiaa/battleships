@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 const Square = (props) => {
 
@@ -7,7 +8,12 @@ const Square = (props) => {
     }
 
     return (
-        <div></div>
+        <div 
+            key={nanoid()}
+            className={props.className}
+            position={props.position} >
+           
+            </div>
     )
 }
 
